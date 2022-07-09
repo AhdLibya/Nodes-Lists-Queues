@@ -7,6 +7,24 @@
     Date: 
         june , 12 , 2022
     
+
+
+    Description:
+        List is a class that implements a linked list.
+        It has a head and a non tail.
+        You Can Create Your Custom Queue By Folowing The Queue Object in This module .
+        You Can keep track of the items in the list.
+
+    Usage:
+        ```lua
+        local list = List.new() -- [List] - > create a new list
+        local Firstnode = list:CreateNode(1) --  [node]- > create a new node with value 1
+        local Secondnode = list:CreateNode(true) -- [node]- > it can store any type of data.
+        local addednode = list:AddNode(Firstnode) -- [node] -> add the node to the list
+        local removednode = list:Remove(addednode.value) -- [boolean] -> remove the node from the list return true if removed or false if not removed
+        
+        ```
+
 ]]
 
 
@@ -166,6 +184,11 @@ end
 function List:_add(_node : Node)
     assert(Node:IsA(_node) , "You must Provid This function with node object")
     self._list[#self._list+1] = _node
+end
+
+function List:AddNode(_node : Node)
+    assert(Node:IsA(_node) , "You must Provid This function with node object")
+    return self:CreateNode(_node.value)
 end
 
 --[[
@@ -452,7 +475,7 @@ function List:IsEmpty()
     return #self._list == 0
 end
 
-
+--Builtin Queue:
 local Queue = {}
 Queue.__index = Queue
 
