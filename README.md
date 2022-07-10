@@ -2,7 +2,8 @@
 
 List is a class that implements a linked list.
 
-It has a head and a non tail.
+It has a head and a tail.
+
 
 You Can Create Your Custom Queue By Folowing The Queue Object in This module .
 
